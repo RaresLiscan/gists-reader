@@ -12,7 +12,6 @@ export default function SearchBar() {
 
   return (
     <StyledSearchBar>
-      <h3>Search for github user:</h3>
       <form onSubmit={search}>
         <input placeholder="Search for user..." ref={searchInputRef} />
         <input type="submit" value="Search" />

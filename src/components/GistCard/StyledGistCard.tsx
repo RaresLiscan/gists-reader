@@ -1,5 +1,82 @@
 import styled from "styled-components";
 
-const StyledGistCard = styled.div``;
+const StyledGistCard = styled.div`
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 2px 2px #c4c4c4;
+  border-radius: 15px;
+  width: 245px;
+  padding: 10px;
+
+  .gistTitle {
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .user {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+
+    .avatar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .avatarImage {
+    border-radius: 50%;
+  }
+
+  .tags {
+    display: flex;
+    gap: 5px;
+
+    .tagsTitle {
+      font-weight: bold;
+    }
+
+    .tagContent {
+      p {
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .description {
+    margin-top: 10px;
+    p {
+      margin: 0;
+    }
+
+    .descriptionTitle {
+      font-weight: bold;
+    }
+  }
+
+  .viewCode {
+    margin-top: 10px;
+    .viewCodeButton {
+      background: white;
+      border: 1px solid black;
+      font-size: 14px;
+    }
+
+    .viewCodeButton:hover {
+      cursor: pointer;
+    }
+  }
+`;
 
 export default StyledGistCard;
