@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/core";
+import { Gist } from "../types/gists-api-response";
 
 const octokit = new Octokit();
 
@@ -13,9 +14,7 @@ export async function getGistsForUser(user: string) {
 
 export async function getLatestGists() {
   try {
-    return await (
-      await octokit.request("GET /gists/public")
-    ).data;
+    return (await octokit.request("GET /gists/public")).data;
   } catch (error) {
     console.error(error);
     return [];

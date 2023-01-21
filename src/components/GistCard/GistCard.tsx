@@ -37,21 +37,15 @@ export default function GistCard({
       <div className="description">
         <p>
           <span className="descriptionTitle">Description: </span>
-          {description}
+          {description.length > 200
+            ? `${description.slice(0, 200)}...`
+            : description}
         </p>
       </div>
 
       <div className="tags">
         <span className="tagsTitle">Tags:</span>
-        {tags.map((tag: string, index) => (
-          <div className="tagContent">
-            <a href="#">
-              <p>
-                {tag.trim()} {index !== tags.length - 1 ? "," : ""}
-              </p>
-            </a>
-          </div>
-        ))}
+        <span>{tags.map((tag: string) => tag.trim()).join(", ")}</span>
       </div>
       <div className="viewCode">
         <button className="viewCodeButton">View code</button>

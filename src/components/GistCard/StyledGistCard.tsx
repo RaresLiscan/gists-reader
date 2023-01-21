@@ -8,8 +8,10 @@ const StyledGistCard = styled.div`
   border-radius: 15px;
   width: 245px;
   padding: 10px;
+  height: 300px;
 
   .gistTitle {
+    overflow-wrap: break-word;
     h2 {
       margin: 0;
     }
@@ -39,13 +41,14 @@ const StyledGistCard = styled.div`
   .tags {
     display: flex;
     gap: 5px;
+    overflow-wrap: break-word;
 
     .tagsTitle {
       font-weight: bold;
     }
 
     .tagContent {
-      p {
+      span {
         margin: 0;
       }
       a {
@@ -56,6 +59,7 @@ const StyledGistCard = styled.div`
 
   .description {
     margin-top: 10px;
+    overflow-wrap: break-word;
     p {
       margin: 0;
     }
