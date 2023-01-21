@@ -25,6 +25,12 @@ const StyledNavbar = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 400px) {
+    .navigation {
+      display: none;
+    }
+  }
 `;
 
 export default StyledNavbar;

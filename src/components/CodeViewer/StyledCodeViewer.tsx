@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { getThemeColor } from "../../theme";
 
 const StyledCodeViewer = styled.div`
-  background: #e4e4e4;
+  background: ${getThemeColor("grayBackground")};
   margin: 10px;
   border-radius: 10px;
   padding: 5px 20px;

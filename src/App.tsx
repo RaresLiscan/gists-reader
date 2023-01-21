@@ -43,7 +43,7 @@ function App() {
       <section className="mainSection">
         <div className="appSearchBar">
           <h1>Search for github user:</h1>
-          <SearchBar submit={setUserName} />
+          <SearchBar submit={setUserName} placeholder="Search for user..." />
         </div>
         <GistsContainer user={userName} gists={gists} />
       </section>

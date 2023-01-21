@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { getThemeColor } from "../../theme";
 
 const StyledGistCard = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 2px 2px 2px #c4c4c4;
+  box-shadow: 2px 2px 2px 2px ${getThemeColor("grayBackground")};
   border-radius: 15px;
   width: 245px;
   padding: 10px;

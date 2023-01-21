@@ -3,9 +3,10 @@ import StyledSearchBar from "./StyledSearchBar";
 
 interface SearchBarProps {
   submit: Function;
+  placeholder?: string;
 }
 
-export default function SearchBar({ submit }: SearchBarProps) {
+export default function SearchBar({ submit, placeholder }: SearchBarProps) {
   const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const search = (event: FormEvent<HTMLFormElement>) => {
@@ -16,7 +17,7 @@ export default function SearchBar({ submit }: SearchBarProps) {
   return (
     <StyledSearchBar>
       <form onSubmit={search}>
-        <input placeholder="Search for user..." ref={searchInputRef} />
+        <input placeholder={placeholder} ref={searchInputRef} />
         <input type="submit" value="Search" />
       </form>
     </StyledSearchBar>
