@@ -10,6 +10,7 @@ export type Gist = {
       type?: string;
       language?: string;
       size?: number;
+      raw_url?: string;
     };
   };
   node_id: string;

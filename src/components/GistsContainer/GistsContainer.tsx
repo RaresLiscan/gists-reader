@@ -25,6 +25,7 @@ export default function GistsContainer({ user, gists }: GistsContainerProps) {
             tags={
               Object.values(gist.files).map((file) => file.language || "") || []
             }
+            rawDataUrl={Object.values(gist.files)[0].raw_url || ""}
           />
         ))}
       </div>

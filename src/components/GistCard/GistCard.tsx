@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import StyledGistCard from "./StyledGistCard";
+import Modal from "../../shared/Modal/Modal";
+import CodeViewer from "../CodeViewer/CodeViewer";
+import { getText } from "../../services/http.service";
 
 interface GistCardProps {
   title: string;
@@ -7,6 +10,7 @@ interface GistCardProps {
   userName: string;
   description: string;
   tags: string[];
+  rawDataUrl: string;
 }
 
 export default function GistCard({
@@ -15,11 +19,24 @@ export default function GistCard({
   userName,
   description,
   tags,
+  rawDataUrl,
 }: GistCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [modalCode, setModalCode] = useState<string>("");
+
+  const openModal = async () => {
+    const code = await getText(rawDataUrl);
+
+    if (code) {
+      setModalCode(code);
+      setIsModalOpen(true);
+    }
+  };
+
   return (
     <StyledGistCard>
-      <div className="gistTitle">
-        <h2>{title}</h2>
+      <div className="gistTitle" title={title}>
+        <h2>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</h2>
       </div>
       <div className="user">
         <div className="avatar">
@@ -38,7 +55,7 @@ export default function GistCard({
         <p>
           <span className="descriptionTitle">Description: </span>
           {description.length > 200
-            ? `${description.slice(0, 200)}...`
+            ? `${description.slice(0, 150)}...`
             : description}
         </p>
       </div>
@@ -48,8 +65,16 @@ export default function GistCard({
         <span>{tags.map((tag: string) => tag.trim()).join(", ")}</span>
       </div>
       <div className="viewCode">
-        <button className="viewCodeButton">View code</button>
+        <button className="viewCodeButton" onClick={openModal}>
+          View code
+        </button>
       </div>
+      {isModalOpen && (
+        <Modal
+          closeModal={() => setIsModalOpen(false)}
+          component={<CodeViewer code={modalCode} />}
+        />
+      )}
     </StyledGistCard>
   );
 }

@@ -11,8 +11,6 @@ export default function SearchBar({ submit }: SearchBarProps) {
   const search = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     submit(searchInputRef.current?.value);
-
-    console.log(searchInputRef.current?.value);
   };
 
   return (

@@ -8,7 +8,8 @@ const StyledGistCard = styled.div`
   border-radius: 15px;
   width: 245px;
   padding: 10px;
-  height: 300px;
+  min-height: 250px;
+  max-height: 350px;
 
   .gistTitle {
     overflow-wrap: break-word;
@@ -27,6 +28,7 @@ const StyledGistCard = styled.div`
       display: flex;
       align-items: center;
       gap: 5px;
+      margin-top: 5px;
 
       p {
         margin: 0;
