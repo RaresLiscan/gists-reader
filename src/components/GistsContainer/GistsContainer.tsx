@@ -26,6 +26,12 @@ export default function GistsContainer({ user, gists }: GistsContainerProps) {
               Object.values(gist.files).map((file) => file.language || "") || []
             }
             rawDataUrl={Object.values(gist.files)[0].raw_url || ""}
+            forks={
+              gist.forksArray
+                ?.filter((fork, index) => index < 3)
+                ?.map((fork) => fork.owner.login)
+                .join(", ") || ""
+            }
           />
         ))}
       </div>

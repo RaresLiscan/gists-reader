@@ -1,5 +1,10 @@
+import { ForkApiResponse } from "./fork-api-response";
+
 export type Gist = {
   description: string | null;
+  id: string;
+  forks_url: string;
+  forksArray?: ForkApiResponse[];
   owner?: {
     login: string;
     avatar_url: string;

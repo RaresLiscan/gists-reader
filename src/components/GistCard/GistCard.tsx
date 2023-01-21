@@ -11,6 +11,7 @@ interface GistCardProps {
   description: string;
   tags: string[];
   rawDataUrl: string;
+  forks: string;
 }
 
 export default function GistCard({
@@ -20,6 +21,7 @@ export default function GistCard({
   description,
   tags,
   rawDataUrl,
+  forks,
 }: GistCardProps) {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalCode, setModalCode] = useState<string>("");
@@ -56,14 +58,22 @@ export default function GistCard({
           <span className="descriptionTitle">Description: </span>
           {description.length > 200
             ? `${description.slice(0, 150)}...`
-            : description}
+            : description || "None"}
         </p>
       </div>
 
       <div className="tags">
         <span className="tagsTitle">Tags:</span>
-        <span>{tags.map((tag: string) => tag.trim()).join(", ")}</span>
+        <span>
+          {tags.map((tag: string) => tag.trim()).join(", ") || "None"}
+        </span>
       </div>
+      {forks && (
+        <div className="forks">
+          <span className="forksTitle">Forked by: </span>
+          <span>{forks}</span>
+        </div>
+      )}
       <div className="viewCode">
         <button className="viewCodeButton" onClick={openModal}>
           View code

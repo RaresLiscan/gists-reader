@@ -71,6 +71,12 @@ const StyledGistCard = styled.div`
     }
   }
 
+  .forks {
+    .forksTitle {
+      font-weight: bold;
+    }
+  }
+
   .viewCode {
     margin-top: 10px;
     .viewCodeButton {
