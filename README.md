@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Gists Reader
+## Project setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In the project directory run the following commands in order to install the project's dependencies
 
-## Available Scripts
+```
+npm install
+npm start
+```
 
-In the project directory, you can run:
+# Project description
 
-### `npm start`
+This project's main purpose is to search for gists (a.k.a. github code snippets) using the Github API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. `Latest Gists` - when the user starts the application there will be displayed the latest gists posted on Github.
 
-### `npm test`
+2. `Filtering by Github username` - by typing a github username in the search input and pressing on submit (or "Enter" on the keyboard) the app will load the last 30 gists posted by that user. In case the input is empty and the form is submitted, the app will load once again the last 30 gists from Github.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. `Viewing gist code` - by clicking on the "View Code" button present on each gist card on the interface, the app will open a modal with the code fetched from the Github API.
 
-### `npm run build`
+4. `Viewing gist details` - on each gist card there are loaded some details about that gist. For now, there are only displayed the description, programming languages and the last 3 forks of the snippet.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The overall application design is not great, as it is only making use of a small color pallete, composed from black, white and shades of gray. However, there are some important things to mention about the app design
 
-### `npm run eject`
+1. The application logo was created using an online logo generator.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. All of the application's CSS code is organized using the `styled-components` library.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Next features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The application in this moment is pretty small, containing only the basic functionality required for it to achieve its purpose. However, it would be cool to add some of the following features in the near future:
 
-## Learn More
+1. Add suggestions in the search input.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Filter by programming languages.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Implement Github OAuth in order for the user to easily access his own gists.
+
+4. Add a newsletter subscription in order for any user to be notified when a gist is posted.
+
+5. Implement a better interface design.
