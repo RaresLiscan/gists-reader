@@ -45,3 +45,29 @@ The application in this moment is pretty small, containing only the basic functi
 4. Add a newsletter subscription in order for any user to be notified when a gist is posted.
 
 5. Implement a better interface design.
+
+
+## Project architecture
+
+All the code needed to further develop this project can be found in the `src` folder. It is organized in the following sub-folders:
+
+```
+src
+├── components
+├── images
+├── services
+├── shared
+└──  types
+```
+
+Here is a short description for each folder:
+
+1. `components` - this folder contains all the large components needed for the application (e.g. the Gists Cards or their container)
+
+2. `images` - under this folder are placed all the static images from the application (e.g. the logo)
+
+3. `services` - this folder contains the functions that call the Github API, either by using their library or by using the classic `fetch` 
+
+4. `shared` - in here are all the reusable components (in this case it's only the modal and search components)
+
+5. `types` - as its name suggests, in here are the type definitions for the data fetched from the API
